@@ -17,7 +17,7 @@
  * under the License.
  */
 
-export const DEFAULT_QUERY_LANGUAGE = 'kuery';
+export const DEFAULT_QUERY_LANGUAGE = 'lucene';
 
 export const UI_SETTINGS = {
   META_FIELDS: 'metaFields',

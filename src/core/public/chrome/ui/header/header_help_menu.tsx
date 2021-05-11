@@ -39,7 +39,7 @@ import { ExclusiveUnion } from '@elastic/eui';
 import { combineLatest } from 'rxjs';
 import { HeaderExtension } from './header_extension';
 import { ChromeHelpExtension } from '../../chrome_service';
-import { GITHUB_CREATE_ISSUE_LINK, KIBANA_FEEDBACK_LINK } from '../../constants';
+import { LDP_DOC_LINK } from '../../constants';
 
 /** @public */
 export type ChromeHelpExtensionMenuGitHubLink = EuiButtonEmptyProps & {
@@ -183,10 +183,19 @@ class HeaderHelpMenuUI extends Component<Props, State> {
 
   public render() {
     const { intl, kibanaVersion, useDefaultContent, kibanaDocLink } = this.props;
-    const { helpExtension, helpSupportUrl } = this.state;
+    const { helpExtension } = this.state;
 
     const defaultContent = useDefaultContent ? (
       <Fragment>
+        <EuiButtonEmpty href={LDP_DOC_LINK} target="_blank" size="xs" flush="left">
+          <FormattedMessage
+            id="core.ui.chrome.headerGlobalNav.helpMenuLDPDocumentationTitle"
+            defaultMessage="LDP documentation"
+          />
+        </EuiButtonEmpty>
+
+        <EuiSpacer size="xs" />
+
         <EuiButtonEmpty href={kibanaDocLink} target="_blank" size="xs" flush="left">
           <FormattedMessage
             id="core.ui.chrome.headerGlobalNav.helpMenuKibanaDocumentationTitle"
@@ -194,38 +203,6 @@ class HeaderHelpMenuUI extends Component<Props, State> {
           />
         </EuiButtonEmpty>
 
-        <EuiSpacer size="xs" />
-
-        <EuiButtonEmpty href={helpSupportUrl} target="_blank" size="xs" flush="left">
-          <FormattedMessage
-            id="core.ui.chrome.headerGlobalNav.helpMenuAskElasticTitle"
-            defaultMessage="Ask Elastic"
-          />
-        </EuiButtonEmpty>
-
-        <EuiSpacer size="xs" />
-
-        <EuiButtonEmpty href={KIBANA_FEEDBACK_LINK} target="_blank" size="xs" flush="left">
-          <FormattedMessage
-            id="core.ui.chrome.headerGlobalNav.helpMenuGiveFeedbackTitle"
-            defaultMessage="Give feedback"
-          />
-        </EuiButtonEmpty>
-
-        <EuiSpacer size="xs" />
-
-        <EuiButtonEmpty
-          href={GITHUB_CREATE_ISSUE_LINK}
-          target="_blank"
-          size="xs"
-          iconType="logoGithub"
-          flush="left"
-        >
-          <FormattedMessage
-            id="core.ui.chrome.headerGlobalNav.helpMenuOpenGitHubIssueTitle"
-            defaultMessage="Open an issue in GitHub"
-          />
-        </EuiButtonEmpty>
       </Fragment>
     ) : null;
 

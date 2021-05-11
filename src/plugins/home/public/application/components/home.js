@@ -155,23 +155,15 @@ export class Home extends Component {
 
           <EuiFlexGroup
             className={`homData ${
-              addDataFeatures.length === 1 && manageDataFeatures.length === 1
+              manageDataFeatures.length === 1
                 ? 'homData--compressed'
                 : 'homData--expanded'
             }`}
           >
             <EuiFlexItem>
-              <AddData addBasePath={addBasePath} features={addDataFeatures} />
-            </EuiFlexItem>
-
-            <EuiFlexItem>
               <ManageData addBasePath={addBasePath} features={manageDataFeatures} />
             </EuiFlexItem>
           </EuiFlexGroup>
-
-          <EuiHorizontalRule margin="xl" aria-hidden="true" />
-
-          <OverviewPageFooter addBasePath={addBasePath} path={HOME_APP_BASE_PATH} />
         </div>
       </main>
     );

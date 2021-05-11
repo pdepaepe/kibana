@@ -231,14 +231,11 @@ export const Overview: FC<Props> = ({ newsFetchResult, solutions, features }) =>
                 ) : (
                   <EuiFlexGroup
                     className={`kbnOverviewData ${
-                      addDataFeatures.length === 1 && manageDataFeatures.length === 1
+                      manageDataFeatures.length === 1
                         ? 'kbnOverviewData--compressed'
                         : 'kbnOverviewData--expanded'
                     }`}
                   >
-                    <EuiFlexItem>
-                      <AddData addBasePath={addBasePath} features={addDataFeatures} />
-                    </EuiFlexItem>
 
                     <EuiFlexItem>
                       <ManageData addBasePath={addBasePath} features={manageDataFeatures} />

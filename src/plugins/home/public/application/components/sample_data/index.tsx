@@ -28,7 +28,6 @@ import {
   // @ts-ignore
   EuiCard,
   EuiButton,
-  EuiButtonEmpty,
 } from '@elastic/eui';
 import { FormattedMessage } from '@kbn/i18n/react';
 import { getServices } from '../../kibana_services';
@@ -39,7 +38,7 @@ interface Props {
   onConfirm: () => void;
 }
 
-export function SampleDataCard({ urlBasePath, onDecline, onConfirm }: Props) {
+export function SampleDataCard({ urlBasePath }: Props) {
   const IS_DARK_THEME = getServices().uiSettings.get('theme:darkMode');
   const cardGraphicFile = !IS_DARK_THEME
     ? 'illustration_integrations_lightmode.png'
@@ -51,26 +50,19 @@ export function SampleDataCard({ urlBasePath, onDecline, onConfirm }: Props) {
       image={cardGraphicURL}
       textAlign="left"
       title={
-        <FormattedMessage id="home.letsStartTitle" defaultMessage="Start by adding your data" />
+        <FormattedMessage id="home.letsStartTitle" defaultMessage="Start by configuring your Kibana" />
       }
       description={
         <FormattedMessage
           id="home.letsStartDescription"
-          defaultMessage="Add data to your cluster from any source, then analyze and visualize it in real time. Use our solutions to add search anywhere, observe your ecosystem, and protect against security threats."
+          defaultMessage="Create and manage the index patterns that help you retrieve your data from Elasticsearch."
         />
       }
       footer={
         <footer>
-          <EuiButton fill className="homWelcome__footerAction" onClick={onConfirm}>
-            <FormattedMessage id="home.tryButtonLabel" defaultMessage="Add data" />
+          <EuiButton fill className="homWelcome__footerAction" href={addBasePath('/app/management/kibana/indexPatterns')}>
+            <FormattedMessage id="home.tryButtonLabel" defaultMessage="Create index pattern" />
           </EuiButton>
-          <EuiButtonEmpty
-            className="homWelcome__footerAction"
-            onClick={onDecline}
-            data-test-subj="skipWelcomeScreen"
-          >
-            <FormattedMessage id="home.exploreButtonLabel" defaultMessage="Explore on my own" />
-          </EuiButtonEmpty>
         </footer>
       }
     />

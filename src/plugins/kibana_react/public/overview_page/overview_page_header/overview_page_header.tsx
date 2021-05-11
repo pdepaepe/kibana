@@ -93,13 +93,9 @@ export const OverviewPageHeader: FC<Props> = ({
                     <EuiButtonEmpty
                       className="kbnOverviewPageHeader__actionButton"
                       flush="both"
-                      href={addBasePath('/app/home#/tutorial_directory')}
+                      href={addBasePath('/app/management/kibana/indexPatterns')}
                       iconType="indexOpen"
-                    >
-                      {i18n.translate('kibana-react.kbnOverviewPageHeader.addDataButtonLabel', {
-                        defaultMessage: 'Add data',
-                      })}
-                    </EuiButtonEmpty>
+                    >Index Patterns</EuiButtonEmpty>
                   </RedirectAppLinks>
                 </EuiFlexItem>
 

@@ -107,28 +107,6 @@ export class DashboardListing extends React.Component {
                   defaultMessage="You can combine data views from any Kibana app into one dashboard and see everything in one place."
                 />
               </p>
-              <p>
-                <FormattedMessage
-                  id="dashboard.listing.createNewDashboard.newToKibanaDescription"
-                  defaultMessage="New to Kibana? {sampleDataInstallLink} to take a test drive."
-                  values={{
-                    sampleDataInstallLink: (
-                      <EuiLink
-                        onClick={() =>
-                          this.props.core.application.navigateToApp('home', {
-                            path: '#/tutorial_directory/sampleData',
-                          })
-                        }
-                      >
-                        <FormattedMessage
-                          id="dashboard.listing.createNewDashboard.sampleDataInstallLinkText"
-                          defaultMessage="Install some sample data"
-                        />
-                      </EuiLink>
-                    ),
-                  }}
-                />
-              </p>
             </Fragment>
           }
           actions={

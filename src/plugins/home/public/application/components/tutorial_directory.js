@@ -270,7 +270,7 @@ class TutorialDirectoryUi extends React.Component {
               <h1>
                 <FormattedMessage
                   id="home.tutorial.addDataToKibanaTitle"
-                  defaultMessage="Add data"
+                  defaultMessage="Nothing here"
                 />
               </h1>
             </EuiTitle>
@@ -286,11 +286,6 @@ class TutorialDirectoryUi extends React.Component {
     return (
       <EuiPage restrictWidth={1200}>
         <EuiPageBody>
-          {this.renderHeader()}
-          <EuiSpacer size="m" />
-          <EuiTabs>{this.renderTabs()}</EuiTabs>
-          <EuiSpacer />
-          {this.renderTabContent()}
         </EuiPageBody>
       </EuiPage>
     );

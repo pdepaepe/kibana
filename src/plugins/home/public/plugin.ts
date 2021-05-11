@@ -118,21 +118,6 @@ export class HomePublicPlugin
 
     const featureCatalogue = { ...this.featuresCatalogueRegistry.setup() };
 
-    featureCatalogue.register({
-      id: 'home_tutorial_directory',
-      title: i18n.translate('home.tutorialDirectory.featureCatalogueTitle', {
-        defaultMessage: 'Add data',
-      }),
-      description: i18n.translate('home.tutorialDirectory.featureCatalogueDescription', {
-        defaultMessage: 'Ingest data from popular apps and services.',
-      }),
-      icon: 'indexOpen',
-      showOnHomePage: true,
-      path: `${HOME_APP_BASE_PATH}#/tutorial_directory`,
-      category: 'data' as FeatureCatalogueCategory.DATA,
-      order: 500,
-    });
-
     return {
       featureCatalogue,
       environment: { ...this.environmentService.setup() },

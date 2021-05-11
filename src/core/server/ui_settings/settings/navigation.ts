@@ -28,7 +28,7 @@ export const getNavigationSettings = (): Record<string, UiSettingsParams> => {
       name: i18n.translate('core.ui_settings.params.defaultRoute.defaultRouteTitle', {
         defaultMessage: 'Default route',
       }),
-      value: '/app/home',
+      value: '/app/kibana_overview',
       schema: schema.string({
         validate(value) {
           if (!value.startsWith('/') || !isRelativeUrl(value)) {
